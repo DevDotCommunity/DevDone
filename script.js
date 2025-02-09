@@ -17,9 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
       li.className = "todo-item";
       li.innerHTML = `
                 <input type="checkbox" ${todo.completed ? "checked" : ""}>
-                <span class="${todo.completed ? "completed" : ""}">${
-        todo.text
-      }</span>
+                <span class="${todo.completed ? "completed" : ""}">${todo.text}</span>
                 <button class="delete-btn">Delete</button>
             `;
 
@@ -28,6 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
         todo.completed = checkbox.checked;
         li.querySelector("span").classList.toggle("completed");
         saveTodos();
+        countListItems(); // Update task count when a task is checked/unchecked
       });
 
       const deleteBtn = li.querySelector(".delete-btn");
@@ -35,10 +34,12 @@ document.addEventListener("DOMContentLoaded", () => {
         todos = todos.filter((t) => t.id !== todo.id);
         li.remove();
         saveTodos();
+        countListItems(); // Update task count when a task is deleted
       });
 
       todoList.appendChild(li);
     });
+    countListItems(); // Update task count after rendering
   };
 
   todoForm.addEventListener("submit", (e) => {
@@ -56,6 +57,15 @@ document.addEventListener("DOMContentLoaded", () => {
       renderTodos();
     }
   });
+
+  function countListItems() {
+    const ulElement = document.getElementById('todo-list');
+    const liElements = ulElement.getElementsByTagName('li');
+    const itemCount = liElements.length;
+
+    // Update the <h2> element instead of <p> element
+    document.getElementById('itemcount').innerText = `Number of Tasks: ${itemCount}`;
+  }
 
   // Initial render
   renderTodos();
