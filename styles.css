@@ -22,6 +22,12 @@ h1 {
   margin-bottom: 1.5rem;
 }
 
+h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 1.5rem;
+}
+
 #todo-form {
   display: flex;
   gap: 0.5rem;
@@ -76,4 +82,8 @@ button:hover {
 
 .delete-btn:hover {
   background: #c82333;
+}
+
+#mark-all-done {
+  margin: 2mm;
 }
