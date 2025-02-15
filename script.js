@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
       li.className = "todo-item";
       li.innerHTML = `
                 <input type="checkbox" ${todo.completed ? "checked" : ""}>
-                <span class="${todo.completed ? "completed" : ""}">${todo.text}</span>
+                <span style="color: black" class="${todo.completed ? "completed" : ""}">${todo.text}</span>
                 <button class="delete-btn">Delete</button>
             `;
 
@@ -70,3 +70,27 @@ document.addEventListener("DOMContentLoaded", () => {
   // Initial render
   renderTodos();
 });
+//dark or light mode
+let currMode = "light";
+const change = () =>{
+  if(currMode === "light"){
+    currMode = "dark"; //changing value of currMode to dark 
+    document.querySelector("button").innerText = "light"; //changing display
+    document.querySelector("button").style.backgroundColor = "#f5f5f5";
+    document.querySelector("button").style.color = "black";
+    document.querySelector("body").style.backgroundColor = "black";
+    document.querySelector("body").style.color = "#f5f5f5";
+    document.querySelector("h1").style.color = "white";
+  }
+      
+  else{
+    currMode = "light"; //changing value of currMode to dark
+    document.querySelector("button").innerText = "dark";//changing display
+    document.querySelector("button").style.backgroundColor = "black";
+    document.querySelector("button").style.color = "#f5f5f5";
+    document.querySelector("body").style.backgroundColor = "#f5f5f5";
+    document.querySelector("body").style.color = "black";
+    document.querySelector("h1").style.color = "black";
+  }
+}
+mode.addEventListener("click", change);
