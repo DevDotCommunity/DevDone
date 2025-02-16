@@ -89,6 +89,7 @@ const change = () =>{
     document.querySelector("body").style.backgroundColor = "black";
     document.querySelector("body").style.color = "#f5f5f5";
     document.querySelector("h1").style.color = "white";
+    document.querySelector("h2").style.color = "white";
   }
       
   else{
@@ -99,6 +100,7 @@ const change = () =>{
     document.querySelector("body").style.backgroundColor = "#f5f5f5";
     document.querySelector("body").style.color = "black";
     document.querySelector("h1").style.color = "black";
+    document.querySelector("h2").style.color = "black";
   }
 }
 mode.addEventListener("click", change);
