@@ -1,60 +1,65 @@
 # DevDone - A Developer's Todo App
 
-A simple, clean, and efficient todo list application built with vanilla JavaScript, HTML, and CSS.
+🚀 A beginner-friendly open-source project from the DevDotCom Community to help developers take their first step into open source! This simple and efficient task management app is built using Flask, JavaScript, HTML, and CSS to make learning fun and easy.
 
-## Features
+🌟 Features
 
-- Add new tasks
-- Mark tasks as complete
-- Delete tasks
-- Persistent storage using localStorage
-- Clean and responsive design
-- Keyboard accessible
-- Mobile-friendly interface
+Add Tasks: Easily create and manage tasks.
 
-## Getting Started
+Mark as Completed: Toggle tasks as done.
 
-1. Clone the repository or download the files
-2. Open `index.html` in your web browser
+Delete Tasks: Remove completed tasks.
 
-No build process or dependencies required!
+Persistent Storage: Saves tasks using JSON.
 
-## Project Structure
+Minimalistic UI: Clean and user-friendly design.
 
-```
+🛠️ Technologies Used
+
+Backend: Flask (Python)
+
+Frontend: HTML, CSS, JavaScript
+
+Storage: JSON
+
+📁 Project Structure
 DevDone/
-├── index.html    # Main HTML structure
-├── styles.css    # Styling and layout
-├── script.js     # Application logic
-└── README.md     # Project documentation
-```
+│── app.py                  # Flask backend
+│── requirements.txt        # Dependencies
+│── static/
+│   ├── styles.css          # Stylesheet
+│   ├── script.js           # Frontend logic
+│── templates/
+│   ├── index.html          # UI template
+│── data/
+│   ├── todos.json          # Task storage
+│── README.md               # Documentation
 
-## Usage
+🚀 Getting Started
 
-- Type your task in the input field
-- Click "Add Task" or press Enter to add the task
-- Check the checkbox to mark a task as complete
-- Click the "Delete" button to remove a task
+Prerequisites
 
-## Browser Support
+Python 3 installed
 
-Works in all modern browsers (Chrome, Firefox, Safari, Edge)
+Install Flask using:
+pip install flask
 
-## Contributing
+# Clone the repository
+git clone https://github.com/your-username/developer-todo-app.git
+cd DevDone
 
-1. Fork the repository
-2. Create a new branch (`git checkout -b feature/improvement`)
-3. Make your changes
-4. Commit your changes (`git commit -am 'Add new feature'`)
-5. Push to the branch (`git push origin feature/improvement`)
-6. Create a Pull Request
+# Create a Simple environment using conda or pip
 
-### Development Guidelines
-- Follow existing code style and formatting
-- Test your changes thoroughly
-- Update documentation as needed
-- Keep pull requests focused on a single feature or fix
+# Install dependencies
+pip install -r requirements.txt
 
-## License
+# Run the Flask application
+python app.py
 
-MIT License
+🤝 Contributing
+
+This is an open-source project built for beginners! Contributions are highly encouraged. Feel free to fork, raise issues, or submit pull requests to improve this project.
+
+📜 License
+
+This project is licensed under the MIT License.
