@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const todoForm = document.getElementById("todo-form");
   const todoInput = document.getElementById("todo-input");
   const todoList = document.getElementById("todo-list");
+  const markAllDoneButton = document.getElementById("mark-all-done");
 
   // Load todos from localStorage
   let todos = JSON.parse(localStorage.getItem("todos")) || [];
@@ -44,18 +45,25 @@ document.addEventListener("DOMContentLoaded", () => {
 
   todoForm.addEventListener("submit", (e) => {
     e.preventDefault();
-    const text = todoInput.value.trim();
-    if (text) {
-      const todo = {
-        id: Date.now(),
-        text,
-        completed: false,
-      };
-      todos.push(todo);
-      todoInput.value = "";
+      const text = todoInput.value.trim();
+      if (text) {
+          const todo = {
+              id: Date.now(),
+              text,
+              completed: false,
+          };
+          todos.push(todo);
+          todoInput.value = "";
+          saveTodos();
+          renderTodos();
+      }
+  });
+
+  markAllDoneButton.addEventListener("click", () => {
+      todos.forEach(todo => todo.completed = true);
       saveTodos();
       renderTodos();
-    }
+    
   });
 
   function countListItems() {
@@ -81,6 +89,7 @@ const change = () =>{
     document.querySelector("body").style.backgroundColor = "black";
     document.querySelector("body").style.color = "#f5f5f5";
     document.querySelector("h1").style.color = "white";
+    document.querySelector("h2").style.color = "white";
   }
       
   else{
@@ -91,6 +100,7 @@ const change = () =>{
     document.querySelector("body").style.backgroundColor = "#f5f5f5";
     document.querySelector("body").style.color = "black";
     document.querySelector("h1").style.color = "black";
+    document.querySelector("h2").style.color = "black";
   }
 }
 mode.addEventListener("click", change);
